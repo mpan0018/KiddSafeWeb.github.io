@@ -118,7 +118,7 @@ function nearbyCallback(results, status) {
 function createMarkers(places) {
   //console.log("Places here. We need to differentiate here somehow",places);
   // Changing the icon type based on the pharmacy/hospital selection
-  var imgToDisplay = document.getElementById('hos').checked?'http://maps.google.com/mapfiles/kml/pal3/icon46.png':'http://maps.google.com/mapfiles/kml/pal2/icon9.png';
+  var imgToDisplay = document.getElementById('hos').checked?'http://maps.google.com/mapfiles/kml/pal3/icon46.png':'http://maps.google.com/mapfiles/kml/pal3/icon18.png';
   //console.log("This is the image to display", imgToDisplay);
   places.forEach(place => {
     //var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
