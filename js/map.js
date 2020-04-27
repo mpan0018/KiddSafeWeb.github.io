@@ -85,7 +85,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
 function getNearbyPlaces(position) {
       var request;
       // Filter the type of the request
-      if(document.getElementById('hos').checked) {
+      if(document.getElementById('phar').checked) {
         //Hospital radio button is checked
          request = {
           location: position,
