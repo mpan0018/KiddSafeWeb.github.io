@@ -16,7 +16,7 @@
         <meta charset="utf-8">
 
         <!-- Site Title -->
-        <title>Quick</title>
+        <title>Kiddsafe</title>
 
 
         <!-- Favicon -->
@@ -44,7 +44,10 @@
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->		
+        <![endif]-->	
+        <script type='text/javascript' src='js/map.js'></script>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDuM4i_EsM0Mszrngcl-OrloE8nldYzRnI&callback=initMap" async defer></script>
+
     </head>
 	
     <body>
@@ -77,7 +80,7 @@
                     </a>
                 </div>
                 
-                <div class="nav-toggle hidden-xs">
+                <!--<div class="nav-toggle hidden-xs">
                     <button class="toggle-btn">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -87,19 +90,19 @@
 
                 <nav class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav main-manu">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="#homeContent">Home</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Map</a></li>
-                        <li><a href="#">Game</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                        <li><a href="#map">Map</a></li>
+                         <li><a href="#">Game</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>-->
                 </nav><!-- /.navbar-collapse -->
             </div>
         </header>
 
         <div class="home-banner fullscreen" >
             <div class="gradient"></div>
-            <div class="banner-content dtable fullscreen">
+            <div class="banner-content dtable fullscreen" id="homeContent">
                 <div class="content-inner dtablecell">
                     <div class="container">
                         <h1>Prevent Unintentional Injuries</h1>
@@ -158,12 +161,11 @@
                             <h4 class="heading">Map</h4>
                             <p class="description">
                                 Contains interactive Google Maps to find Hospitals and drugstores near you.
-
                             </p>
                         </div>
                     </div>
                     
-                    <div class="proecess-block col-xs-12 col-sm-6 col-md-4">
+                    <!--<div class="proecess-block col-xs-12 col-sm-6 col-md-4">
                         <div class="process-inner">
                             <div class="icon-holder">
                                 <i class="icon-mobile"></i>
@@ -186,14 +188,36 @@
                                 Using the strength of Data Analytics to bring you latest figures on injuries
                             </p>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </div>
-        <!-- // process -->
-
-        <!-- experience -->
+        <div id="hospitalSection"><h2> Hospitals & Drugstores Near You</h2></div>
+        
+        <!-- // Mapp -->
+        <div class="row">
+            <div class="col-md-6">
+                <input type="radio" name="typeRadio" id="hos" checked onchange="initMap()"> Hospitals
+            </div class="col-md-6">
+            <div>
+                <input type="radio" name="typeRadio" id="phar"onchange="initMap()"> Pharmacies 
+            </div>
+        </div>
+        <section id="mpdir">
+            <div class="container" style="border: 1px solid grey;">
+                <div class="row" style="height:600px; width:1200px;">
+                    <div class="col-xs-12 col-sm-9 "style="height:600px; width:850px;" >
+                        <div id="map"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <div id="directionsPanel"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <!-- Mapp -->
         <div id="experience" class="experience section">
             <div class="gradient"></div>
             <div class="container">
@@ -202,12 +226,12 @@
                         <div class="exp-block">
                             <h3> <i class="icon-globe"></i> Latest News</h3>
                             <ul class="list-none">
-                                <li>
+                                <li class="clickableHand" onclick="burnsLink()">
                                     <h4>National Burns Week</h4>
                                     <span>March 20 - April 20</span>
                                     <p>Learn about various different burn injuries and remedies to ensure that your child is safe at all time</p>
                                 </li>
-                                <li>
+                                <li class="clickableHand" onclick="drowningAccidents()">
                                     <h4>Preventing Drowning Accidents</h4>
                                     <p>Current</p>
                                     <p>Drowning is one of the most common reason for household deaths occuring in children. This article discusses its prevention</p>
@@ -219,12 +243,12 @@
                         <div class="exp-block">
                             <h3> <i class="icon-book-open"></i> Parent Trainings</h3>
                             <ul class="list-none">
-                                <li>
+                                <li class="clickableHand" onclick="childFeeding()">
                                     <h4>Child Feeding Training</h4>
                                     <p>Online</p>
                                     <p>Learn how to properly feed Children aged 0-5 and information on choking prevention</p>
                                 </li>
-                                <li>
+                                <li class="clickableHand" onclick="childSafetySeminar()">
                                     <h4>Child Health and Safety Seminar</h4>
                                     <p>August 25 - Melbourne CBD</p>
                                     <p>Seminar on basic first aid for Parents. No previous experience in training required to enroll</p>
@@ -250,17 +274,16 @@
 
                         <div class="works-gallery">
                             <div id="mygallery" >
-                                <div>
+                                <div class="clickableHand" id="broomClick" onclick="roomSwitch('bathroom')">
                                     <img alt="" src="img/Bathroom.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
                                             <h4>Bathroom</h4>
                                             <p>Safety information</p>
                                         </div>
-                                    </div>
-                                    
+                                    </div> 
                                 </div>
-                                <div>
+                                <div class="clickableHand"  onclick="roomSwitch('kitchen')">
                                     <img alt="" src="img/Kitchen.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
@@ -269,7 +292,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="clickableHand"  onclick="roomSwitch('diningTable')">
                                     <img alt="" src="img/DiningTable.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
@@ -278,7 +301,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="clickableHand" onclick="roomSwitch('livingRoom')">
                                     <img alt="" src="img/LivingRoom.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
@@ -287,7 +310,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="clickableHand" onclick="roomSwitch('garage')">
                                     <img alt="" src="img/Garage.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
@@ -296,7 +319,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div>
+                                <div class="clickableHand" onclick="roomSwitch('backyard')">
                                     <img alt="" src="img/Backyard.jpg"/>
                                     <div class="item-musk">
                                         <div class="item-caption">
@@ -385,6 +408,7 @@
             </div>
         </div>
         <!-- // contact -->
+        
 
         <footer class="footer">
             <div class="conainer text-center wow zoomIn">
@@ -432,5 +456,33 @@
         <script src="js/jquery.justifiedGallery.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/main.js"></script>
+        <script>
+            function burnsLink() {
+              window.open("https://ohsonline.com/articles/2020/02/05/this-week-is-burn-awareness-week.aspx", "_blank");
+            }
+            function drowningAccidents() {
+              window.open("https://www.mayoclinic.org/healthy-lifestyle/infant-and-toddler-health/in-depth/child-safety/art-20044744", "_blank");
+            }
+            function childFeeding() {
+              window.open("https://www.who.int/nutrition/publications/infantfeeding/9789241594745/en/", "_blank");
+            }
+            function childSafetySeminar() {
+              window.open("https://www.eventbrite.com.au/e/cafhs-protecting-childrens-health-safety-and-wellbeing-workshop-registration-63317471261", "_blank");
+            }
+
+            // THis is tho switch between the pages of the rooms
+            function roomSwitch(roomType) {
+                console.log("In here");
+                console.log(window.location);
+                var toOpen = window.location + roomType + ".html";
+                window.open(toOpen,"_self");
+            }
+
+
+
+        </script>
+
+
+
     </body>
 </html>

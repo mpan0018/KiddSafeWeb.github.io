@@ -12,6 +12,11 @@
 
 @import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
 
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
     background-color: #fff;
     font-family: 'Roboto', sans-serif;
@@ -160,8 +165,14 @@ button.btn.btn-theme-color:hover{
     position: relative;
 }
 
+/* 
+  ////////////////////////////////////////////////////////////////
+      The size of the Greyed out top section can be adjusted here
+      perviously it was -> height: auto;
+  //////////////////////////////////////////////////////////////////
+*/
 .navbar-brand {
-    height: auto;
+    height: 8px;
     padding: 0;
 }
 
@@ -373,6 +384,67 @@ button.btn.btn-theme-color:hover{
     padding-top: 14px;
 }
 
+/* #searchInput {
+  height: 35px; 
+  width: 700px;
+  margin-left: 190px;
+} */
+
+/*=====================================================
+    Hospital Section
+======================================================*/
+#hospitalSection {
+  display: inline-block;
+    font-size: 25px;
+    padding:  15px 0 19px;
+    text-transform: uppercase;
+    letter-spacing: 30px;
+    font-weight: 200;
+}
+
+
+/*=====================================================
+    Map Function
+======================================================*/
+#map{
+  height: 100%;
+  width:100%;
+}
+.mapContainer{
+  height:200px;
+  width:100%
+}
+
+/*=====================================================
+    Clickable hand for news and other stuff Function
+======================================================*/
+.clickableHand {
+  cursor: pointer; 
+}
+
+
+/*=====================================================
+    Scrollable information section
+======================================================*/
+
+#directionsPanel {
+  height: 600px;
+  overflow: auto;
+  background-color:#fff;
+}
+
+
+
+ .headerDivider {
+  border-left:1px solid #38546d; 
+  border-right:1px solid #16222c; 
+  height:80px;
+  position:absolute;
+  right:249px;
+  top:10px; 
+}
+
+
 
 /*=====================================================
     Process
@@ -483,6 +555,9 @@ button.btn.btn-theme-color:hover{
     font-weight: 700;
     text-transform: uppercase;
 }
+
+
+/*================================*/
 
 /*=====================================================
     Experience
