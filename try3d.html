@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="/js/3deffects.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="image-container" id="kitchen-image-block">
+       <!-- <img src="/img/naomi-kitchen.jpg" id="clip_image" onmouseover="blur_background()"
+            onmouseout="restore_background()"> -->
+       
+
+
+
+
+        <img class="clip-svg" src="/img/naomi-kitchen.jpg" onmouseover="blur_background()"
+        onmouseout="restore_background()">
+
+        <svg width="0" height="0">
+            <defs>
+                <clipPath id="myClip">
+                    <polygon points="400,50 400,320, 140,300" />
+                    <polygon points="450,10 500,200 600,100" />
+                    <polygon points="150,10 100,200 300,100" />
+                </clipPath>
+            </defs>
+        </svg>
+
+
+        <img src="/img/naomi-kitchen.jpg" id="background_image"> 
+
+
+
+    </div>
+
+</body>
+
+</html>

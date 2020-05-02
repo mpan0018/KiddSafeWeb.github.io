@@ -424,6 +424,65 @@ button.btn.btn-theme-color:hover{
 
 
 /*=====================================================
+    3D map parts
+======================================================*/
+#clip_image {
+  /*clip-path: polygon(0% 25%, 13% 30%, 14% 85%, 2% 90%);*/
+  clip-path: polygon(0% 24%, 14% 30%, 14% 84%, 0% 97%);
+  /*clip-path: polygon(82% 0%, 74% 23%, 89% 22%);*/
+}
+
+
+#clip_image:hover {
+  width: 500px;
+  height: 500px;
+}
+
+
+
+#kitchen-image-block{
+  width:250px;
+  height:250px;
+  position:relative;
+  }
+
+  #clip_image{   
+  position:absolute;
+  }
+
+
+
+
+  .clip-svg {
+    clip-path: url(#myClip);
+    position:absolute;
+  }
+  .clip-svg:hover {
+    width: 500px;
+    height: 500px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=====================================================
     Scrollable information section
 ======================================================*/
 
